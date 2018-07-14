@@ -1,0 +1,34 @@
+import Vue from 'vue'
+import App from './App.vue'
+
+import axios from 'axios'
+//import VueAxios from 'vue-axios'
+import VueRouter from 'vue-router'
+import Routes from './routes';
+import https from 'https';
+
+Vue.use(VueRouter);
+
+Vue.prototype.$axios = axios.create({
+  httpsAgent: new https.Agent({  
+    rejectUnauthorized: false
+	})
+})
+
+const router = new VueRouter({
+	routes: Routes
+});
+
+new Vue({
+  el: '#app',
+  render: h => h(App),
+  router: router,
+  methods:{
+  	getInfo(){
+  		//console log stuff here
+  	}
+  },
+  mounted(){
+  	this.getInfo()
+  }
+})
