@@ -1,12 +1,12 @@
 <template>
-<h1 class="myheader">Less Than What</h1>
+<h4 class="myheader ml-4">{{ title }}</h4>
 </template>
 
 <script>
 export default {
   data () {
     return {
-    	title: 'the title'
+    	title: 'lessthanwhat'
     }
   },
   methods: {

@@ -3,6 +3,7 @@
 		<div class="card text-white bg-primary">
 			<div class="card-header bg-primary">
 				<div class="row">
+					<div class="col-sm-1"><i class="fa fa-angle-double-down"></i></div>
 					<div class="col-sm-3">{{ skill_item.name }}</div>
 					<div class="col-sm-3">Years: {{ skill_item.years }}</div>
 				</div>
