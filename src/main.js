@@ -7,6 +7,8 @@ import VueRouter from 'vue-router'
 import Routes from './routes';
 import https from 'https';
 
+import config from './config/config'
+Vue.prototype.$config = config;
 
 Vue.use(VueRouter);
 

@@ -6,7 +6,7 @@
 export default {
   data () {
     return {
-    	title: 'lessthanwhat'
+    	title: this.$config.title
     }
   },
   methods: {
