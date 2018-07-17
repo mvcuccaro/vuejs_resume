@@ -32,14 +32,18 @@ export default{
 <style scoped>
 	.card-header {  background-color:yellow !important; color:#666666; font-weight: bold !important}
 	.expand-enter-active {
-		transition: all .6s ease-out;
+		transition: all .6s ease-out, opacity 1s ease-out;
+		font-size:16px;
 		height:auto;
 		max-height: 400px;
 		overflow:hidden;
+		opacity:100;
 	}
 	.expand-enter, .expand-leave-to {
 		max-height:0px;
 		height:0px;
 		opacity:0;
+		color:red;
+		font-size:32px;
 	}
 </style>
