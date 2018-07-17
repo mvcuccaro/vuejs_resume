@@ -8,6 +8,7 @@
 			</div>
 		</div>
 		<div class="card">
+			<div class="text-right"><i class="fa fa-plus mr-2" v-on:click="addExperience()"></i></div>
 			<div class="card-body text-primary bg-white">
 				<div class="row bg-white ml-3 mr-3"> 
 					<resume-experience-item v-for="item in resume.experiences" v-bind:experienceitem="item" v-bind:key="item.company" class="mb-2"></resume-experience-item>
@@ -38,7 +39,13 @@ export default {
 			this.resume = r.data;
 			console.log(this.resume.skills);
 		})
-	}  	
+	},
+	addExperience(){
+		this.resume.experiences.push({
+			title: 'title',
+			company: 'company'
+		});
+	}	
   },
   mounted(){
   	this.getResume()
