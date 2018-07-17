@@ -8,7 +8,7 @@
 				</div>
 			</div>
 			<transition name="expand">
-			<div class="card-body bg-white text-primary" v-if="show_body">
+			<div class="card-body bg-white text-primary text-justify" v-if="show_body">
 				{{ experience_item.description }}
 			</div>
 			</transition>
