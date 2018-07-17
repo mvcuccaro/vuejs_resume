@@ -43,6 +43,6 @@ export default {
 
 <style>
 .card-header{
-  padding-top:2px;padding-bottom:2px;padding-left:6px;
+  padding-top:2px;padding-bottom:2px;padding-left:10px;
 }
 </style>

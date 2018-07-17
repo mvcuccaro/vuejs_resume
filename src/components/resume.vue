@@ -1,8 +1,17 @@
 <template>
-	<div class="panel panel-default">
-		<div class="panel-body text-primary bg-white">
-			<div class="row bg-white ml-3 mr-3"> 
-				<resume-skill-item v-for="item in resume.skills" v-bind:skillitem="item" class="mb-2"></resume-skill-item>
+	<div>
+		<div class="card">
+			<div class="card-body text-primary bg-white">
+				<div class="row bg-white ml-3 mr-3"> 
+					<resume-skill-item v-for="item in resume.skills" v-bind:skillitem="item" v-bind:key="item.name" class="mb-2"></resume-skill-item>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-body text-primary bg-white">
+				<div class="row bg-white ml-3 mr-3"> 
+					<resume-experience-item v-for="item in resume.experiences" v-bind:experienceitem="item" v-bind:key="item.company" class="mb-2"></resume-experience-item>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -10,10 +19,12 @@
 
 <script>
 import ResumeSkillItem from './resume_skill_item.vue';
+import ResumeExperienceItem from './resume_experience_item.vue';
 
 export default {
 	components:{
-		'resume-skill-item': ResumeSkillItem
+		'resume-skill-item': ResumeSkillItem,
+		'resume-experience-item': ResumeExperienceItem
 	},
   	data () {
     	return {
@@ -25,6 +36,7 @@ export default {
 		this.$axios.get('https://localhost:443/data/resume')
 		.then(r => {
 			this.resume = r.data;
+			console.log(this.resume.skills);
 		})
 	}  	
   },
