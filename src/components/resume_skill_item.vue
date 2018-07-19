@@ -7,9 +7,11 @@
 					<div class="col-sm-3">Years: {{ skill_item.years }}</div>
 				</div>
 			</div>
-			<div class="card-body bg-white text-primary" v-show="show_body">
-				{{ skill_item.description }}
-			</div>
+			<transition name="expand">
+				<div class="card-body bg-white text-primary" v-show="show_body">
+					{{ skill_item.description }}
+				</div>
+			</transition>
 		</div>
 	</div>
 </template>

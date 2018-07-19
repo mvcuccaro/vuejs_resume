@@ -45,4 +45,23 @@ export default {
 .card-header{
   padding-top:2px;padding-bottom:2px;padding-left:10px;
 }
+.card-body{
+  padding-top:12px;padding-bottom:12px;
+}
+
+.expand-enter-active {
+  transition: all .6s ease-out, opacity 1s ease-out;
+  font-size:16px;
+  height:auto;
+  max-height: 400px;
+  overflow:hidden;
+  opacity:100;
+}
+.expand-enter, .expand-leave-to {
+  max-height:0px;
+  height:0px;
+  opacity:0;
+  color:red;
+  font-size:32px;
+}
 </style>
