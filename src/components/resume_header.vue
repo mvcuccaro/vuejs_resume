@@ -6,7 +6,7 @@
 					<img id="profile_image" class="col-12" v-bind:src="profile_image">
 				</div>
 				<div class="col-xs-7 col-sm-8 col-md-8 col-lg-9 text-justify">
-					{{ objective }}
+					<span style="white-space:pre-wrap" id="objective"><p>{{ objective }}</p></span>
 				</div>
 			</div>
 		</div>
@@ -37,6 +37,11 @@ export default {
 		padding:0px;
 		border:2px solid #000000;
 		border-radius:7px;
+	}
+
+	#objective {
+		font-size:14px;
+		line-height:17px !important;
 	}
 </style>
 
