@@ -2,7 +2,7 @@
 	<div>
 		<resume-header></resume-header>
 		<div class="card">
-			<div class="text-right mb-0 pb-0" style="border-bottom: 1px dotted #C0C0C0;"><i class="fa fa-sort mr-3" v-on:click="sortSkills()"></i></div>
+			<div class="text-right mb-0 pb-0" style="border-bottom: 1px dotted #C0C0C0;"><i class="fa fa-sort mr-3" v-on:click="sortData('skills', 'name')"></i></div>
 			<div class="card-body text-primary bg-white">
 				<div class="row bg-white"> 
 					<resume-skill-item v-for="item in resume.skills" v-bind:skillitem="item" v-bind:key="item.name" class="mb-2"></resume-skill-item>
@@ -10,7 +10,7 @@
 			</div>
 		</div>
 		<div class="card">
-			<div class="text-right mb-0 pb-0" style="border-bottom: 1px dotted #C0C0C0;"><i class="fa fa-plus mr-3" v-on:click="addExperience()"></i></div>
+			<div class="text-right mb-0 pb-0" style="border-bottom: 1px dotted #C0C0C0;"><i class="fa fa-sort mr-3" v-on:click="sortData('experiences', 'title')"></i></div>
 			<div class="card-body text-primary bg-white">
 				<div class="row bg-white"> 
 					<resume-experience-item v-for="item in resume.experiences" v-bind:experienceitem="item" v-bind:key="item.company" class="mb-2"></resume-experience-item>
@@ -34,7 +34,7 @@ export default {
   	data () {
     	return {
     		resume: {},
-    		skills_sort_up: true
+    		sort_directions:{skills: true, experience:true}
     	}
   	},
   methods: {
@@ -45,11 +45,11 @@ export default {
 			console.log(this.resume.skills);
 		})
 	},
-	sortSkills(){
-		this.resume.skills.sort((a,b) => {
-			return this.skills_sort_up ? a.name > b.name : a.name < b.name;
+	sortData(arg_data_type, arg_sort_column){
+		this.resume[arg_data_type].sort((a,b) => {
+			return this.sort_directions[arg_data_type] ? a[arg_sort_column] > b[arg_sort_column] : a[arg_sort_column] < b[arg_sort_column];
 		});
-		this.skills_sort_up = !this.skills_sort_up;
+		this.sort_directions[arg_data_type] = !this.sort_directions[arg_data_type];
 	},
 	addExperience(){
 		this.resume.experiences.push({
