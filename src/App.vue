@@ -50,7 +50,7 @@ export default {
 }
 
 .expand-enter-active {
-  transition: all .6s ease-out, opacity 1s ease-out;
+  transition: all .4s ease-out, opacity .8s ease-out;
   font-size:16px;
   height:auto;
   max-height: 400px;

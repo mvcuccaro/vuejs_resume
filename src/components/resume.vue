@@ -2,6 +2,7 @@
 	<div>
 		<resume-header></resume-header>
 		<div class="card">
+			<div class="text-right mb-0 pb-0" style="border-bottom: 1px dotted #C0C0C0;"><i class="fa fa-sort mr-3" v-on:click="sortSkills()"></i></div>
 			<div class="card-body text-primary bg-white">
 				<div class="row bg-white"> 
 					<resume-skill-item v-for="item in resume.skills" v-bind:skillitem="item" v-bind:key="item.name" class="mb-2"></resume-skill-item>
@@ -32,7 +33,8 @@ export default {
 	},
   	data () {
     	return {
-    		resume: {}
+    		resume: {},
+    		skills_sort_up: true
     	}
   	},
   methods: {
@@ -42,6 +44,12 @@ export default {
 			this.resume = r.data;
 			console.log(this.resume.skills);
 		})
+	},
+	sortSkills(){
+		this.resume.skills.sort((a,b) => {
+			return this.skills_sort_up ? a.name > b.name : a.name < b.name;
+		});
+		this.skills_sort_up = !this.skills_sort_up;
 	},
 	addExperience(){
 		this.resume.experiences.push({
@@ -60,21 +68,4 @@ export default {
 #header {
 	background-color:#C0C0FF;
 }
-
-.expand-enter-active {
-	transition: all .6s ease-out, opacity 1s ease-out;
-	font-size:16px;
-	height:auto;
-	max-height: 400px;
-	overflow:hidden;
-	opacity:100;
-}
-.expand-enter, .expand-leave-to {
-	max-height:0px;
-	height:0px;
-	opacity:0;
-	color:red;
-	font-size:32px;
-}
-
 </style>
