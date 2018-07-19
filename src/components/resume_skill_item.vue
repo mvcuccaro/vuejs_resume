@@ -3,8 +3,8 @@
 		<div class="card text-white bg-primary">
 			<div class="card-header bg-primary">
 				<div class="row">
-					<div class="col-sm-3"><i class="fa fa-angle-double-down mr-2"></i>{{ skill_item.name }}</div>
-					<div class="col-sm-3">Years: {{ skill_item.years }}</div>
+					<div class="col-sm-7 col-xs-10 col-lg-5 col-md-6"><i class="fa fa-angle-double-down mr-2"></i>{{ skill_item.name }}</div>
+					<div class="col-sm-5 col-xs-2 col-lg-7 col-md-6">Years: {{ skill_item.years }}</div>
 				</div>
 			</div>
 			<transition name="expand">

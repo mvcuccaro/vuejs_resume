@@ -2,10 +2,10 @@
 	<div class="card" id="resume_header">
 		<div class="card-body">
 			<div class="row">
-				<div class="col-2">
-					<img style="height:auto;width:100%" v-bind:src="profile_image">
+				<div class="col-xs-5 col-sm-4 col-md-4 col-lg-3">
+					<img id="profile_image" class="col-12" v-bind:src="profile_image">
 				</div>
-				<div class="col-10">
+				<div class="col-xs-7 col-sm-8 col-md-8 col-lg-9">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -34,6 +34,12 @@ export default {
 	 background-size:cover;
 	 border:1px outset #FDFDFD;
 	 margin-bottom:4px;
+	}
+
+	#profile_image {
+		padding:0px;
+		border:2px solid #000000;
+		border-radius:7px;
 	}
 </style>
 
