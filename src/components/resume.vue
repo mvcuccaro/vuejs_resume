@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<resume-header></resume-header>
+		<resume-header v-bind:objective="resume.objective"></resume-header>
 		<div class="card">
 			<div class="text-right mb-0 pb-0" style="border-bottom: 1px dotted #C0C0C0;"><i class="fa fa-sort mr-3" v-on:click="sortData('skills', 'name')"></i></div>
 			<div class="card-body text-primary bg-white">
