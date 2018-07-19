@@ -5,8 +5,8 @@
 				<div class="col-xs-5 col-sm-4 col-md-4 col-lg-3">
 					<img id="profile_image" class="col-12" v-bind:src="profile_image">
 				</div>
-				<div class="col-xs-7 col-sm-8 col-md-8 col-lg-9">
-					{{ objective }}					
+				<div class="col-xs-7 col-sm-8 col-md-8 col-lg-9 text-justify">
+					{{ objective }}
 				</div>
 			</div>
 		</div>
@@ -19,7 +19,7 @@ export default {
 	data() {
 		return {
 			profile_image: this.$config.profile_image,
-			objective: this.objective	
+			objective: this.objective
 		}
 	}
 }
