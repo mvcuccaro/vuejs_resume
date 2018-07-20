@@ -1,6 +1,7 @@
 const express 	= require('express');
 const fs 		= require('fs');
 const https 	= require('https');
+const http 		= require('http');
 const resume 	= require('./data/resume.js');
 
 let private_key = fs.readFileSync('./keys/server.key', 'utf8');
@@ -12,6 +13,7 @@ let credentials = {
 
 const app = new express();
 let https_server = https.createServer(credentials, app);
+let http_server  = http.createServer(app);
 
 app.use('/vue_lessthanwhat', express.static('./vue_lessthanwhat'));
 
@@ -35,4 +37,8 @@ app.get('/data/resume', (req, res) => {
 
 https_server.listen(443, () => {
 	console.log('listening on 443');
+})
+
+http_server.listen(8075, () => {
+	console.log('listening on 8075');
 })
