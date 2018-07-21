@@ -15,7 +15,6 @@ const app = new express();
 let https_server = https.createServer(credentials, app);
 let http_server  = http.createServer(app);
 
-app.use('/vue_lessthanwhat', express.static('./vue_lessthanwhat'));
 
 app.use(function(req, res, next) { 
 	res.header("Access-Control-Allow-Origin", "*"); res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept"); next(); 
