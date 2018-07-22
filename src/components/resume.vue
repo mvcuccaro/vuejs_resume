@@ -39,7 +39,7 @@ export default {
   	},
   methods: {
 	getResume(){
-		this.$axios.get('https://localhost:443/data/resume')
+		this.$axios.get(this.$config.api_url + '/data/resume')
 		.then(r => {
 			this.resume = r.data;
 			console.log(this.resume.skills);

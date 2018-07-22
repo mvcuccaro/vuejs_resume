@@ -13,8 +13,6 @@ import Header from './components/header.vue';
 export default {
   name: 'app',
   mounted(){
-    this.getList(),
-    this.whatever()
   },
   components: {
     'my-list-item':Mylistitem,
@@ -28,15 +26,6 @@ export default {
     }
   },
   methods: {
-    getList(){
-      this.$axios.get('https://localhost:443/data')
-      .then(r => {
-        this.mylist = r.data.data;
-      })
-    },
-    whatever(){
-    }
-
   }
 }
 </script>
