@@ -19,7 +19,6 @@ export default {
 	data() {
 		return {
 			profile_image: this.$config.profile_image,
-			objective: this.objective
 		}
 	}
 }
