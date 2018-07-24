@@ -15,10 +15,8 @@ export default {
   methods: {
       scanOver(){
         this.scan_time = true;
-        console.log(this.scan_time);
         setTimeout(() => {
             this.scan_time = false;
-            console.log(this.scan_time);
         }, 2000);
       },
       scanOut(){
@@ -33,7 +31,6 @@ export default {
         setTimeout(() => {
           this.$refs.header.style = "color:black";
           document.querySelector('body').style.backgroundColor = "white"
-
         }, 100)
       }
   }
