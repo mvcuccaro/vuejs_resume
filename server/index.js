@@ -16,6 +16,7 @@ let credentials = {
 */
 
 const app = new express();
+app.set('trust proxy', true);
 //let https_server = https.createServer(credentials, app); https handled mby proxy
 
 let http_server  = http.createServer(app);
