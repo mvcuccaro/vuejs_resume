@@ -51,3 +51,7 @@ https_server.listen(443, () => {
 http_server.listen(8075, () => {
 	console.log('listening on 8075');
 })
+
+http_server.on('request', (req,res) => {
+		console.log('Request', req.ip, req.url, req.hostname);
+})
