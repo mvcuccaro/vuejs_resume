@@ -51,16 +51,22 @@ export default {
     	return {
     		resume: {},
     		my_repos: [],
-    		sort_directions:{skills: true, experience:true}
+    		sort_directions:{skills: true, experience:true},
+    		skill_shows: this.$session.getData('skill_shows') || {}
     	}
   	},
   methods: {
 	getResume(){
+		console.log(this.skill_shows);
 		this.$axios.get(this.$config.api_url + '/data/resume')
 		.then(r => {
 			this.resume = r.data;
-			console.log(this.resume.skills);
-			console.log(this.$session.getData('foo'));
+			if( Object.keys(this.skill_shows).length == 0 ){
+				this.resume.skills.forEach( obj => {
+					this.skill_shows[obj.name] = false;
+				})
+				this.$session.setData('skill_shows', this.skill_shows);
+			}
 		})
 	},
 	getRepos(){

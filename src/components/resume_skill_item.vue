@@ -1,5 +1,5 @@
 <template>
-	<div class="col-sm-12" v-on:click="show_body = !show_body">
+	<div class="col-sm-12" v-on:click="showBody(skill_item.name)">
 		<div class="card text-white bg-primary">
 			<div class="card-header bg-primary">
 				<div class="row">
@@ -22,7 +22,16 @@ export default{
 	data (){ 
 		return {
 			skill_item: this.skillitem,
-			show_body:false
+			show_body: this.$session.getData('skill_shows')[this.skillitem.name] || false
+		}
+	},
+	methods: {
+		showBody(arg_skill_name){
+			let skill_shows = this.$session.getData('skill_shows');
+			console.log(skill_shows);
+			skill_shows[arg_skill_name] = !skill_shows[arg_skill_name];
+			this.$session.setData('skill_shows', skill_shows);
+			this.show_body = skill_shows[arg_skill_name];
 		}
 	}
 }

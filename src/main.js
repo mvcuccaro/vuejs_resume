@@ -30,7 +30,7 @@ new Vue({
   router: router,
   methods:{
     _myInit(){
-      this.$session.setData('foo', 'bar');
+      //do some init
     },
   	getInfo(){
   		//console log stuff here
