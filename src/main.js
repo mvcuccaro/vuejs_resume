@@ -6,9 +6,11 @@ import axios from 'axios'
 import VueRouter from 'vue-router'
 import Routes from './routes';
 import https from 'https';
+import Session from './session';
 
 import config from './config/config'
 Vue.prototype.$config = config;
+Vue.prototype.$session = new Session();
 
 Vue.use(VueRouter);
 
@@ -27,11 +29,15 @@ new Vue({
   render: h => h(App),
   router: router,
   methods:{
+    _myInit(){
+      this.$session.setData('foo', 'bar');
+    },
   	getInfo(){
   		//console log stuff here
   	}
   },
   mounted(){
-  	this.getInfo()
+    this._myInit();
+  	this.getInfo();
   }
 })

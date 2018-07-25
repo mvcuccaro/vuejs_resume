@@ -60,6 +60,7 @@ export default {
 		.then(r => {
 			this.resume = r.data;
 			console.log(this.resume.skills);
+			console.log(this.$session.getData('foo'));
 		})
 	},
 	getRepos(){
