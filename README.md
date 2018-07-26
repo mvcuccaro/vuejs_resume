@@ -1,6 +1,6 @@
 # vue_lessthanwhat
 
-> A Vue.js project
+> a simple resume page built in vuejs https://www.michaelcuccaro.com
 
 ## Build Setup
 
