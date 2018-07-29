@@ -53,4 +53,8 @@ export default {
   color:red;
   font-size:32px;
 }
+
+.contained {
+  width:100%;
+}
 </style>

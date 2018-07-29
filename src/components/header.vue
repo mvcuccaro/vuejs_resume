@@ -5,6 +5,7 @@
         <b-dropdown id="ddown1" text="Main Menu" class="mt-2">
             <b-dropdown-item to="/" exact>Resume</b-dropdown-item>
             <b-dropdown-item to="/changelog">Changelog</b-dropdown-item>
+            <b-dropdown-item to="/tools">Dev Tools</b-dropdown-item>
         </b-dropdown>
       </div>
       <div class="col-sm-6 text-right">
