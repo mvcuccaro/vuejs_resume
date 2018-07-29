@@ -28,7 +28,6 @@ export default{
 	methods: {
 		showBody(arg_skill_name){
 			let skill_shows = this.$session.getData('skill_shows');
-			console.log(skill_shows);
 			skill_shows[arg_skill_name] = !skill_shows[arg_skill_name];
 			this.$session.setData('skill_shows', skill_shows);
 			this.show_body = skill_shows[arg_skill_name];
