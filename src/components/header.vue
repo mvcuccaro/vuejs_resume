@@ -50,6 +50,6 @@ export default {
 
 <style scoped> 
 .card-body { padding-top:4px;padding-bottom:0px;padding-right:6px;border-bottom:1px solid #DDDDDD; margin-bottom:8px; }
-.myheader { margin-left:10px; font-family: 'Libre Barcode 128 Text';font-size:60px; }
+.myheader { margin-left:10px; font-family: 'Libre Barcode 128 Text';font-size:52px; }
 @import url('https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text');
 </style>

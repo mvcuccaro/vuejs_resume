@@ -57,4 +57,9 @@ export default {
 .contained {
   width:100%;
 }
+
+.bg-primary {
+  color:white;
+  background-color: blue !important;
+}
 </style>

@@ -23,7 +23,6 @@ export default {
 			this.$axios.get(changelog_url)
 			.then(result => {
 				this.commits = result.data;
-				console.log(this.commits);
 			})
 		}
 	},
