@@ -1,6 +1,16 @@
 <template>
-	<div class="card-body text-right">
-		<h4 class="myheader" ref="header"><span v-on:mouseover="scanOver">.</span>{{ title }}<span v-on:mouseover="scanOut">.</span></h4>
+	<div class="card-body">
+    <div class="row">
+      <div class="col-sm-6 pl-0">
+        <b-dropdown id="ddown1" text="Main Menu" class="mt-2">
+            <b-dropdown-item to="/" exact>Resume</b-dropdown-item>
+            <b-dropdown-item to="/changelog">Changelog</b-dropdown-item>
+        </b-dropdown>
+      </div>
+      <div class="col-sm-6 text-right">
+		    <h4 class="myheader" ref="header"><span v-on:mouseover="scanOver">.</span>{{ title }}<span v-on:mouseover="scanOut">.</span></h4>
+      </div>
+    </div>
 	</div>
 </template>
 
