@@ -1,6 +1,6 @@
 <template>
 	<div class="card">
-		<div class="card-header">{{ name }}</div>
+		<div class="card-header">{{ name }} - {{ description }}</div>
 		<div class="card-body">
 			<div class="row mb-1">
 				<div class="col-12"><input type="text" v-model="raw" class="contained"></input></div>
@@ -19,6 +19,7 @@ export default {
 	data(){
 		return {
 			name: 'md5er',
+			description: 'Convert a string to its md5 hash',
 			raw: ''
 		}
 	},
