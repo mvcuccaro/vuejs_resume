@@ -2,8 +2,8 @@
 	<div class="card-body">
     <div class="row">
       <div class="col-sm-6 pl-0">
-        <b-dropdown id="ddown1" text="Main Menu" class="mt-2">
-            <b-dropdown-item to="/" exact>Resume</b-dropdown-item>
+        <b-dropdown id="dd_main_menu" text="Main Menu" class="mt-2">
+            <b-dropdown-item to="/" exact class="dd_main_menu_item">Resume</b-dropdown-item>
             <b-dropdown-item to="/changelog">Changelog</b-dropdown-item>
             <b-dropdown-item to="/tools">Dev Tools</b-dropdown-item>
         </b-dropdown>
@@ -51,5 +51,7 @@ export default {
 <style scoped> 
 .card-body { padding-top:4px;padding-bottom:0px;padding-right:6px;border-bottom:1px solid #DDDDDD; margin-bottom:8px; }
 .myheader { margin-left:10px; font-family: 'Libre Barcode 128 Text';font-size:52px; }
+#dd_main_menu .dropdown-toggle {   background-color: red !important; }
+
 @import url('https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text');
 </style>

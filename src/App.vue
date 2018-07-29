@@ -73,4 +73,6 @@ body {
   border-radius:6px;
   margin-top:4px;
 }
+
+#dd_main_menu .dropdown-toggle {   background-color: darkred !important; color:yellow;font-weight:500; }
 </style>
