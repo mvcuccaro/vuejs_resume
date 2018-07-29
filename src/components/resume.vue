@@ -24,7 +24,7 @@
 				<div class="card">
 					<div class="card-header">My Github Repos</div>
 					<div class="card_body" id="repos_list_body">
-						<div class="row ml-1 mb-1" v-for="item in my_repos">
+						<div class="row ml-1 mb-1" v-for="item in my_repos" v-show="item.fork == false">
 							<div class="col-1">
 								<router-link :to="{ name: 'changelog', params: { repo_name: item.name }}" :title="changelogTitle(item.name)">
 									<i class="fa fa-list"></i>
