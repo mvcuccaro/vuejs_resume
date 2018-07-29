@@ -4,6 +4,6 @@ import dev_tools from './components/dev_tools.vue';
 
 export default [
 	{path:"/", component: resume},
-	{path:"/changelog", component: changelog},
+	{name: 'changelog', path:"/changelog/:repo_name?", component: changelog},
 	{path:"/tools", component: dev_tools}
 ];

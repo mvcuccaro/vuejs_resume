@@ -24,11 +24,18 @@
 				<div class="card">
 					<div class="card-header">My Github Repos</div>
 					<div class="card_body" id="repos_list_body">
-						<ul>
-							<li v-for="item in my_repos">
-								<a :href="item.svn_url" :title="item.description">{{ item.name }}</a>
-							</li>
-						</ul>
+						<div class="row ml-1 mb-1" v-for="item in my_repos">
+							<div class="col-1">
+								<router-link :to="{ name: 'changelog', params: { repo_name: item.name }}" :title="changelogTitle(item.name)">
+									<i class="fa fa-list"></i>
+								</router-link>
+							</div>
+							<div class="col-10">
+								<div>
+									<a :href="item.svn_url" :title="item.description">{{ item.name }}</a>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -57,7 +64,6 @@ export default {
   	},
   methods: {
 	getResume(){
-		console.log(this.skill_shows);
 		this.$axios.get(this.$config.api_url + '/data/resume')
 		.then(r => {
 			this.resume = r.data;
@@ -86,7 +92,11 @@ export default {
 			title: 'title',
 			company: 'company'
 		});
-	}	
+	},
+	changelogTitle: function(arg_name) {
+  		return `Change log for ${arg_name} project`;
+  	}	
+
   },
   mounted(){
   	this.getResume(),
@@ -100,6 +110,11 @@ export default {
 	background-color:#C0C0FF;
 }
 #repos_list_body {
-	font-size:14px;
+	font-size:15px;
+}
+
+#repos_list_body i {
+	font-size:13px;
+	color:black;
 }
 </style>
