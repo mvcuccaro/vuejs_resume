@@ -62,4 +62,15 @@ export default {
   color:white;
   background-color: blue !important;
 }
+
+body {
+  background-color:lightblue;
+}
+
+#app {
+  background-color:white;
+  border:2px inset lightgrey;
+  border-radius:6px;
+  margin-top:4px;
+}
 </style>
