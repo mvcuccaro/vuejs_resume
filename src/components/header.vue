@@ -50,8 +50,7 @@ export default {
 
 <style scoped> 
 .card-body { padding-top:4px;padding-bottom:0px;padding-right:6px;border-bottom:1px solid #DDDDDD; margin-bottom:8px; }
-.myheader { margin-left:10px; font-family: 'Libre Barcode 128 Text';font-size:52px; }
-#dd_main_menu .dropdown-toggle {   background-color: red !important; }
+.myheader { margin-left:10px; font-family: 'Libre Barcode 128 Text';font-size:44px; margin-top:4px; }
 
 @import url('https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text');
 </style>
