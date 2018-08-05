@@ -38,7 +38,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="card">
+				<div class="card mt-2">
 					<div class="card-header">Audio</div>
 					<div class="card-body m-1 p-1">
 						<audio-player :audio-sources="audio_sources"></audio-player>
