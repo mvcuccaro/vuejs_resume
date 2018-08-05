@@ -38,28 +38,42 @@
 						</div>
 					</div>
 				</div>
+				<div class="card">
+					<div class="card-header">Audio</div>
+					<div class="card-body m-1 p-1">
+						<audio-player :audio-sources="audio_sources"></audio-player>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 </template>
-
 <script>
 import ResumeSkillItem from './resume_skill_item.vue';
 import ResumeExperienceItem from './resume_experience_item.vue';
 import ResumeHeader from './resume_header.vue';
+import AudioPlayer from './audio_player.vue';
 
 export default {
 	components:{
 		'resume-skill-item': ResumeSkillItem,
 		'resume-experience-item': ResumeExperienceItem,
-		'resume-header': ResumeHeader
+		'resume-header': ResumeHeader,
+		'audio-player': AudioPlayer
 	},
   	data () {
     	return {
     		resume: {},
     		my_repos: [],
     		sort_directions:{skills: true, experience:true},
-    		skill_shows: this.$session.getData('skill_shows') || {}
+    		skill_shows: this.$session.getData('skill_shows') || {},
+    		audio_sources: [{
+    			src:'http://thirdpartyinterface.com/mp3/3pi.call_of_shinebox.2014-4-25.mp3',
+    			name:'Call of Shinebox'
+    		},{
+    			src:'http://thirdpartyinterface.com/mp3/3pi.the_periss_correlation.2014-4-25.2.mp3',
+    			name: 'The Periss Correlation'
+    		}]
     	}
   	},
   methods: {
@@ -95,7 +109,10 @@ export default {
 	},
 	changelogTitle: function(arg_name) {
   		return `Change log for ${arg_name} project`;
-  	}	
+  	},
+  	audioPlay: function(){
+  		this.$refs.audio_controls.play();
+  	}
 
   },
   mounted(){
