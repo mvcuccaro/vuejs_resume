@@ -1,6 +1,7 @@
 <template>
-	<div>
-		<div>
+	<div class="card mt-2">
+		<div class="card-header">Bitcalc helper (in development)</div>
+		<div class="card-body">
 				<div><input type="checkbox" :id="'bc_cb_' + _uid + '1'" value="1" v-model="bits"></div>
 				<div><input type="checkbox" :id="'bc_cb_' + _uid + '2'" value="2" v-model="bits"></div>
 				<div><input type="checkbox" :id="'bc_cb_' + _uid + '4'" value="4" v-model="bits"></div>

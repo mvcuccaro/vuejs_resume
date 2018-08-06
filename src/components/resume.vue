@@ -21,6 +21,13 @@
 				</div>
 			</div>
 			<div class="col-sm-3 ml-0 pl-0" id="repos_container">
+				<div class="card mb-1">
+					<div class="card-header">Audio</div>
+					<div class="card-body m-1 p-1">
+						<div><p class="small_description">I write geek rock for fun. Here are some songs I wrote playable in this vue component media player I also wrote for fun. The UI is inspired by Winamp.</p></div>
+						<audio-player :audio-sources="audio_sources"></audio-player>
+					</div>
+				</div>
 				<div class="card">
 					<div class="card-header">My Github Repos</div>
 					<div class="card_body" id="repos_list_body">
@@ -36,12 +43,6 @@
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-				<div class="card mt-2">
-					<div class="card-header">Audio</div>
-					<div class="card-body m-1 p-1">
-						<audio-player :audio-sources="audio_sources"></audio-player>
 					</div>
 				</div>
 			</div>
@@ -133,5 +134,10 @@ export default {
 #repos_list_body i {
 	font-size:13px;
 	color:black;
+}
+
+.small_description {
+	font-size:14px;
+	text-align:justify;
 }
 </style>

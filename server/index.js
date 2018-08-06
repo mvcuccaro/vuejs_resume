@@ -22,6 +22,7 @@ app.set('trust proxy', true);
 let http_server  = http.createServer(app);
 
 app.use('/dist', express.static('../dist'));
+app.use('/images', express.static('images'));
 
 
 app.use(function(req, res, next) { 

@@ -4,7 +4,6 @@
 			<div class="card-body bg-secondary">
 				<md5er></md5er>
 				<bitcalc @totalChanged="bitcalcTotalChanged($event)" :total="bitcalc_total"></bitcalc>
-				<div>bitcalc total: {{ bitcalc_total }}</div>
 			</div>
 		</div>
 </template>
