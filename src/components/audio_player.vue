@@ -7,7 +7,7 @@
 				<div style="clear:both" id="meta_playing">Playing: {{ current_audio_name }}</div>
 			</div>
 			<div class="slider_container">
-				<input type="range" min="1" max="100" value="50" class="slider" id="volume_range">
+				<input type="range" min="1" max="100" value="50" class="slider" id="volume_range" @change="volumeChanged()" ref="volume_control">
 			</div>
 			<div>
 				<span class="button" @click="controlClick" id="button_play" :class="playClasses">play</span>
@@ -68,7 +68,8 @@ export default{
 			current_audio_source: this.audioSources[0].src,
 			current_audio_name: this.audioSources[0].name,
 			current_time: '00:00',
-			total_time:NaN
+			total_time:NaN,
+			volume:.50
 		}
 	},
 	methods:{
@@ -112,6 +113,10 @@ export default{
 		},
 		audioSourceSelected(arg_src){
 			return { audio_source_selected: arg_src == this.current_audio_source ? true : false }
+		},
+		volumeChanged(e){
+			this.volume = this.$refs.volume_control.value
+			this.$refs.ap.volume = this.volume * .01;
 		}
 	},
 	computed:{
@@ -131,6 +136,7 @@ export default{
 	mounted: function(){
 		let ap = this.$refs.ap;
 		this.total_time = ap.duration.toString() == 'NaN' ? '0:00' : ap.duration;
+		ap.volume = this.volume;
 
 		ap.addEventListener("timeupdate", () => {
 			this.current_time = ap.currentTime.toFixed(2);
