@@ -6,6 +6,9 @@
 				<div v-html="total_time" id="meta_total_time"></div>
 				<div style="clear:both" id="meta_playing">Playing: {{ current_audio_name }}</div>
 			</div>
+			<div class="slider_container">
+				<input type="range" min="1" max="100" value="50" class="slider" id="volume_range">
+			</div>
 			<div>
 				<span class="button" @click="controlClick" id="button_play" :class="playClasses">play</span>
 				<span class="button" @click="controlClick" id="button_pause" :class="pauseClasses">pause</span>
@@ -155,7 +158,7 @@ span {
 
 #audio_player span.button {
 	background-color:silver;
-	color:white;
+	color:black;
 	display:inline-block;
 	border:2px outset grey;
 	width:25%;
@@ -165,6 +168,7 @@ span {
 	font-weight:500;
 	margin:0px !important;
 	margin-right:-5px !important;
+	padding-bottom:2px;
 }
 
 .active {
@@ -225,5 +229,38 @@ span {
 #meta_playing {
 	font-size:12px;
 }
+
+.slider_container {
+	width:100%;
+}
+
+.slider {
+	margin-top:4px;
+	-webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /
+    height: 14px; 
+    background: grey; 
+    outline: none; 
+    opacity: 0.8; 
+    -webkit-transition: .2s; 
+    transition: opacity .2s;
+    border: 1px inset #ffffff;
+}
+
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 10px; /* Set a specific slider handle width */
+    height: 14px; /* Slider handle height */
+    background: yellow; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    border:1px outset darkgrey;
+}
+
 
 </style>
