@@ -9,7 +9,7 @@
 			<div class="slider_container">
 				<input type="range" min="1" max="100" value="50" class="slider" id="volume_range" @change="volumeChanged()" ref="volume_control">
 			</div>
-			<div>
+			<div id="player_buttons">
 				<span class="button" @click="controlClick" id="button_play" :class="playClasses">play</span>
 				<span class="button" @click="controlClick" id="button_pause" :class="pauseClasses">pause</span>
 				<span class="button" @click="controlClick" id="button_stop" :class="stopClasses">stop</span>
@@ -29,12 +29,6 @@
 		</audio>
 	</div>
 </template>
-
-<!--
-		<audio id="audio_controls" ref="audio_controls">
-			<source src="http://thirdpartyinterface.com/mp3/3pi.call_of_shinebox.2014-4-25.mp3"></source>
-		</audio>
--->
 
 <script>
 function convertSecondsToMinutes(arg_seconds){
@@ -162,18 +156,23 @@ span {
 	height:100%;
 }
 
+#player_buttons{
+	width:100%;
+}
+
 #audio_player span.button {
 	background-color:silver;
 	color:black;
 	display:inline-block;
 	border:2px outset grey;
-	width:25%;
+	width:24.6%;
+	height:22px;
 	cursor:pointer;
 	text-align:center;
 	font-size:11px;
 	font-weight:500;
 	margin:0px !important;
-	margin-right:-5px !important;
+	margin-right:-4px !important;
 	padding-bottom:2px;
 }
 
@@ -267,6 +266,4 @@ span {
     cursor: pointer; /* Cursor on hover */
     border:1px outset darkgrey;
 }
-
-
 </style>
