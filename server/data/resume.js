@@ -27,17 +27,28 @@ let resume = {
 	}],
 
 	experiences: [{
+		company:'Kea Care', 
+		city: 'Ocala',
+		state: 'Florida',
+		start_month:'December',
+		start_year:'2018',
+		end_month:'',
+		end_year:'',
+		current: true,
+		title:'Lead Node.js / Vue.js Developer',
+		description:'Lead architect and developer for Kea Care Healthcare Compliance Automation Software / SaaS using Node backend and Vue frontend',
+	},{
 		company:'ATR', 
 		city: 'Crystal River',
 		state: 'Florida',
 		start_month:'June',
 		start_year:'2017',
-		end_month:'',
-		end_year:'',
-		current: true,
+		end_month:'December',
+		end_year:'2018',
+		current: false,
 		title:'Lead Developer',
 		description:'Developer for proprietary internal queuing software in a Node / Angular stack. Migration of data from a legacy Microsoft Access environment to MySQL including analysis / porting of Visual Basic forms to Node and Angular. Created express.js middleware to handle custom group level API entitlements.  Created custom angular directives.  Wrote a Node Webkit (nw.js) app that allows seamless editing and saving of remote web files as if they were local files.  Wrote automation chat bot using node simple-xmpp. Designed deployment system using bash, Ngnix and pm2 to proxy web requests to multiple node applications running on different virtual domains.  Provide documentation for new and existing reusable code, modules and services in bitbucket snippets. Handle code reviews and merges of bug and feature branches in to master branches using git and bitbucket.',
-	}, {
+	},{
 		company:'Enflyer', 
 		city: 'Miami',
 		state: 'Florida',
