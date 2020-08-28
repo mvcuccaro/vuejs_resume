@@ -1,4 +1,4 @@
-# vue_lessthanwhat
+# vue
 
 > a simple resume page built in vuejs https://www.michaelcuccaro.com
 
